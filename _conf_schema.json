@@ -1,0 +1,78 @@
+{
+  "api_key": {
+    "type": "string",
+    "default": "",
+    "description": "MOSS API Key",
+    "hint": "在 MOSI 开放平台获取，以 Bearer 方式发送"
+  },
+  "base_url": {
+    "type": "string",
+    "default": "https://api.mosi.cn",
+    "description": "API 地址",
+    "hint": "一般无需修改"
+  },
+  "model": {
+    "type": "string",
+    "default": "moss-image-base-1.0",
+    "description": "默认模型",
+    "options": [
+      "moss-image-base-1.0",
+      "moss-image-base-1.0-2026-10-09",
+      "moss-image-sft-1.0",
+      "moss-image-sft-1.0-2026-10-09"
+    ]
+  },
+  "size": {
+    "type": "string",
+    "default": "1024x1024",
+    "description": "默认尺寸",
+    "hint": "宽x高，每边 256-2048 且为 16 的倍数，总像素不超过 2097152；也可填比例如 16:9"
+  },
+  "negative_prompt": {
+    "type": "text",
+    "default": "nsfw, worst quality, bad anatomy, watermark, jpeg artifact",
+    "description": "默认反向提示词"
+  },
+  "prompt_enhance": {
+    "type": "bool",
+    "default": false,
+    "description": "默认开启提示词增强"
+  },
+  "watermark": {
+    "type": "bool",
+    "default": true,
+    "description": "输出可见水印"
+  },
+  "num_inference_steps": {
+    "type": "int",
+    "default": 0,
+    "description": "推理步数",
+    "hint": "1-100，填 0 使用服务端默认值"
+  },
+  "guidance_scale": {
+    "type": "float",
+    "default": -1,
+    "description": "引导系数",
+    "hint": "0-10，填负数使用服务端默认值"
+  },
+  "timeout": {
+    "type": "int",
+    "default": 900,
+    "description": "请求超时（秒）"
+  },
+  "send_progress": {
+    "type": "bool",
+    "default": true,
+    "description": "绘图开始时发送“正在绘制”提示"
+  },
+  "show_info": {
+    "type": "bool",
+    "default": false,
+    "description": "图片后附带模型、尺寸、seed 信息"
+  },
+  "enable_llm_tool": {
+    "type": "bool",
+    "default": true,
+    "description": "允许 LLM 通过函数调用自动画图"
+  }
+}
